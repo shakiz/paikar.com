@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/cart"
-        android:title="@string/cart"/>
+        android:id="@+id/bag"
+        android:title="@string/bag"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_icon_shopping_cart"/>
+
+    <item
+        android:id="@+id/call"
+        android:title="@string/call"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_icon_phone"/>
 
 </menu>

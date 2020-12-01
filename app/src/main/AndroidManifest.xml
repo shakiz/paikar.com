@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Paikarcom">
         <activity
-            android:name=".activities.home.HomeActivity">
+            android:name=".activities.home.HomeActivity"
+            android:theme="@style/AppThemeNoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

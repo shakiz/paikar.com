@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Paikar.shop</string>
     <string name="cart">Cart</string>
+    <string name="bag">Bag</string>
+    <string name="call">Call</string>
+    <string name="search">Search</string>
 </resources>
