@@ -1,0 +1,16 @@
+package com.client.paikarcom.activities.companyinfo;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+
+import com.client.paikarcom.R;
+
+public class ReturnPolicyActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_return_policy);
+    }
+}

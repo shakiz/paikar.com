@@ -9,13 +9,42 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Paikarcom">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".activities.home.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activities.profile.ProfileActivity"/>
+        <activity
+            android:name=".activities.notification.NotificationActivity" />
+        <activity
+            android:name=".activities.product.OrderPlacementActivity" />
+        <activity
+            android:name=".activities.product.ProductDetailsActivity" />
+        <activity
+            android:name=".activities.companyinfo.CreditPolicyActivity" />
+        <activity
+            android:name=".activities.companyinfo.ReturnPolicyActivity" />
+        <activity
+            android:name=".activities.companyinfo.ContactUsActivity" />
+        <activity
+            android:name=".activities.companyinfo.ComplaintAndSuggestionActivity" />
+        <activity
+            android:name=".activities.companyinfo.VisionActivity" />
+        <activity
+            android:name=".activities.companyinfo.VehicleServiceActivity" />
+        <activity
+            android:name=".activities.companyinfo.PaymentSystemActivity" />
+        <activity
+            android:name=".activities.companyinfo.AboutUsActivity" />
+        <activity
+            android:name=".activities.auth.RegistrationActivity" />
+        <activity
+            android:name=".activities.auth.LoginActivity" />
     </application>
 
 </manifest>

@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">paikar.com</string>
+    <string name="app_name">Paikar.shop</string>
+    <string name="cart">Cart</string>
 </resources>
