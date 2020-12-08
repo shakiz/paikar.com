@@ -28,8 +28,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
             android:orientation="vertical">
 
             <EditText
@@ -37,9 +35,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="42dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:background="@drawable/edit_text_rectangle_bg_search"
                 android:ellipsize="end"
-                android:focusable="false"
+                android:focusable="true"
                 android:gravity="center|left"
                 android:hint="@string/search"
                 android:maxLines="1"
@@ -55,23 +55,47 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="166dp"
-                android:layout_marginTop="16dp">
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp">
 
                 <androidx.viewpager.widget.ViewPager
                     android:id="@+id/pager"
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"/>
+                    android:layout_height="146dp"/>
 
                 <com.google.android.material.tabs.TabLayout
                     android:id="@+id/tabDots"
                     android:layout_alignParentBottom="true"
                     android:layout_width="match_parent"
+                    android:layout_marginTop="4dp"
                     android:layout_height="16dp"
                     app:tabBackground="@drawable/tab_selector"
                     app:tabGravity="center"
                     app:tabIndicatorHeight="0dp"/>
 
             </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:textStyle="bold"
+                android:text="@string/category"
+                android:textColor="@color/md_grey_800"
+                android:textSize="18sp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/categoryRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                tools:listitem="@layout/adapter_recycler_category"/>
 
         </LinearLayout>
 
