@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:padding="2dp" >
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="8dp"
+    android:padding="2dp">
 
     <ImageView
         android:id="@+id/image"
@@ -11,6 +13,6 @@
         android:adjustViewBounds="true"
         android:layout_gravity="center"
         android:src="@drawable/banner_image_1"
-        android:scaleType="fitCenter" />
+        android:scaleType="fitXY" />
 
-</LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -15,6 +15,7 @@
         android:translationZ="2dp"
         android:layout_marginBottom="8dp"
         android:background="@color/md_white_1000"
+        app:titleTextColor="@color/md_green_800"
         android:orientation="horizontal">
 
     </androidx.appcompat.widget.Toolbar>
@@ -53,19 +54,19 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="176dp"
+                android:layout_height="166dp"
                 android:layout_marginTop="16dp">
 
                 <androidx.viewpager.widget.ViewPager
                     android:id="@+id/pager"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="150dp"/>
 
                 <com.google.android.material.tabs.TabLayout
                     android:id="@+id/tabDots"
                     android:layout_alignParentBottom="true"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="16dp"
                     app:tabBackground="@drawable/tab_selector"
                     app:tabGravity="center"
                     app:tabIndicatorHeight="0dp"/>

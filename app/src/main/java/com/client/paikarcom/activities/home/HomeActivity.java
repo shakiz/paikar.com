@@ -49,7 +49,7 @@ public class HomeActivity extends AppCompatActivity {
 
         NUM_PAGES =IMAGES.length;
 
-        // Auto start of viewpager
+        //region auto start of viewpager
         final Handler handler = new Handler();
         final Runnable Update = new Runnable() {
             public void run() {
@@ -66,6 +66,7 @@ public class HomeActivity extends AppCompatActivity {
                 handler.post(Update);
             }
         }, 3000, 3000);
+        //endregion
 
     }
 
