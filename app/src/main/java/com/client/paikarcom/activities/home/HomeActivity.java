@@ -1,8 +1,11 @@
 package com.client.paikarcom.activities.home;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
@@ -10,7 +13,9 @@ import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.WindowManager;
+import android.widget.ListView;
 
 import com.client.paikarcom.R;
 import com.client.paikarcom.adapters.CategoryRecyclerAdapter;
@@ -31,16 +36,30 @@ public class HomeActivity extends AppCompatActivity {
     private ArrayList<Integer> ImagesArray = new ArrayList<Integer>();
     private RecyclerView categoryRecycler;
     private CategoryRecyclerAdapter categoryRecyclerAdapter;
+    private DrawerLayout mDrawerLayout;
+    private Toolbar toolbar;
+    private ActionBarDrawerToggle mDrawerToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_home_drawer);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //region setup toolBar
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.md_green_800));
         setSupportActionBar(toolbar);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+        //endregion
+
+        //region set drawer
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(false);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_icon_menu);
+        setupDrawerToggle();
+        //endregion
 
         //region init UI and perform UI interactions
         initUI();
@@ -53,6 +72,15 @@ public class HomeActivity extends AppCompatActivity {
         mPager = (ViewPager) findViewById(R.id.pager);
         tabLayout = (TabLayout) findViewById(R.id.tabDots);
         categoryRecycler = findViewById(R.id.categoryRecycler);
+    }
+    //endregion
+
+    //region drawer toggle
+    void setupDrawerToggle(){
+        mDrawerToggle = new ActionBarDrawerToggle(this,mDrawerLayout,toolbar,R.string.app_name, R.string.app_name);
+        //This is necessary to change the icon of the Drawer Toggle upon state change.
+        mDrawerLayout.addDrawerListener(mDrawerToggle);
+        mDrawerToggle.syncState();
     }
     //endregion
 
@@ -112,6 +140,14 @@ public class HomeActivity extends AppCompatActivity {
     //endregion
 
     //region activity components
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (mDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.home_menu, menu);

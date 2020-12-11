@@ -13,4 +13,14 @@
     <string name="cosmetics">Cosmetics</string>
     <string name="kitchen_materials">Kitchen Materials</string>
     <string name="hardware_and_electronics">Hardware and Electronics</string>
+    <string name="please_sign_in">Please sign in</string>
+    <string name="notification">Notification</string>
+    <string name="return_policy">Return Policy</string>
+    <string name="payment_system">Payment System</string>
+    <string name="vehicle">Vehicle</string>
+    <string name="credit_policy">Credit Policy</string>
+    <string name="about_us">Acout Us</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="vision">Vision</string>
+    <string name="complain_or_suggestion">Complain / Suggestion</string>
 </resources>
