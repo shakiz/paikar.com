@@ -1,0 +1,99 @@
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardUseCompatPadding="true"
+    android:layout_margin="4dp"
+    card_view:cardCornerRadius="8dp"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <LinearLayout
+        android:id="@+id/item_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/item_back_shape"
+        android:gravity="center"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:foreground="?android:attr/selectableItemBackground">
+
+        <ImageView
+            android:id="@+id/ImageResId"
+            android:layout_width="match_parent"
+            android:layout_height="128dp"
+            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/rice_product_1"
+            android:tag="Drawable" />
+
+        <TextView
+            android:id="@+id/Price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ImageResId"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center|left"
+            android:gravity="center|left"
+            android:text="@string/price_demo"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/md_grey_800"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ImageResId"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center|left"
+            android:gravity="center|left"
+            android:text="@string/rice_pulses_flour"
+            android:textStyle="bold"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/md_grey_800"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/AmountInKg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ImageResId"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center|left"
+            android:gravity="center|left"
+            android:text="@string/one_kg"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/md_grey_800"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/AddToCart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/green_gradient_color"
+            android:textColor="@color/md_white_1000"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="@string/add_to_cart"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

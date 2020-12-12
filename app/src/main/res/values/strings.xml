@@ -23,4 +23,12 @@
     <string name="contact_us">Contact Us</string>
     <string name="vision">Vision</string>
     <string name="complain_or_suggestion">Complain / Suggestion</string>
+    <string name="rice">Rice</string>
+    <string name="pulses">Pulses</string>
+    <string name="flour">Flour</string>
+    <string name="suzy">Suzy</string>
+    <string name="semai">Semai</string>
+    <string name="price_demo">$80</string>
+    <string name="one_kg">1 kg</string>
+    <string name="add_to_cart">Add to cart</string>
 </resources>

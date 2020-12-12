@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Paikarcom">
         <activity
+            android:name=".activities.product.ProductListActivity"
+            android:theme="@style/AppThemeNoActionBar"/>
+        <activity
+            android:name=".activities.product.SubCategoryActivity"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
             android:name=".activities.home.HomeActivity"
             android:theme="@style/AppThemeNoActionBar">
             <intent-filter>
@@ -19,33 +25,47 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.profile.ProfileActivity"/>
+            android:name=".activities.profile.ProfileActivity"
+            android:theme="@style/AppThemeNoActionBar"/>
         <activity
-            android:name=".activities.notification.NotificationActivity" />
+            android:name=".activities.notification.NotificationActivity"
+            android:theme="@style/AppThemeNoActionBar"/>
         <activity
-            android:name=".activities.product.OrderPlacementActivity" />
+            android:name=".activities.product.OrderPlacementActivity"
+            android:theme="@style/AppThemeNoActionBar"/>
         <activity
-            android:name=".activities.product.ProductDetailsActivity" />
+            android:name=".activities.product.ProductDetailsActivity"
+            android:theme="@style/AppThemeNoActionBar"/>
         <activity
-            android:name=".activities.companyinfo.CreditPolicyActivity" />
+            android:name=".activities.companyinfo.CreditPolicyActivity"
+            android:theme="@style/AppThemeNoActionBar"/>
         <activity
-            android:name=".activities.companyinfo.ReturnPolicyActivity" />
+            android:name=".activities.companyinfo.ReturnPolicyActivity"
+            android:theme="@style/AppThemeNoActionBar"/>
         <activity
-            android:name=".activities.companyinfo.ContactUsActivity" />
+            android:name=".activities.companyinfo.ContactUsActivity"
+            android:theme="@style/AppThemeNoActionBar"/>
         <activity
-            android:name=".activities.companyinfo.ComplaintAndSuggestionActivity" />
+            android:name=".activities.companyinfo.ComplaintAndSuggestionActivity"
+            android:theme="@style/AppThemeNoActionBar"/>
         <activity
-            android:name=".activities.companyinfo.VisionActivity" />
+            android:name=".activities.companyinfo.VisionActivity"
+            android:theme="@style/AppThemeNoActionBar"/>
         <activity
-            android:name=".activities.companyinfo.VehicleServiceActivity" />
+            android:name=".activities.companyinfo.VehicleServiceActivity"
+            android:theme="@style/AppThemeNoActionBar"/>
         <activity
-            android:name=".activities.companyinfo.PaymentSystemActivity" />
+            android:name=".activities.companyinfo.PaymentSystemActivity"
+            android:theme="@style/AppThemeNoActionBar"/>
         <activity
-            android:name=".activities.companyinfo.AboutUsActivity" />
+            android:name=".activities.companyinfo.AboutUsActivity"
+            android:theme="@style/AppThemeNoActionBar"/>
         <activity
-            android:name=".activities.auth.RegistrationActivity" />
+            android:name=".activities.auth.RegistrationActivity"
+            android:theme="@style/AppThemeNoActionBar"/>
         <activity
-            android:name=".activities.auth.LoginActivity" />
+            android:name=".activities.auth.LoginActivity"
+            android:theme="@style/AppThemeNoActionBar"/>
     </application>
 
 </manifest>

@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
@@ -18,6 +19,7 @@ import android.view.WindowManager;
 import android.widget.ListView;
 
 import com.client.paikarcom.R;
+import com.client.paikarcom.activities.product.SubCategoryActivity;
 import com.client.paikarcom.adapters.CategoryRecyclerAdapter;
 import com.client.paikarcom.adapters.SlidingImageAdapter;
 import com.client.paikarcom.models.Category;
@@ -55,7 +57,6 @@ public class HomeActivity extends AppCompatActivity {
 
         //region set drawer
         getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(false);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_icon_menu);
         setupDrawerToggle();
@@ -124,6 +125,12 @@ public class HomeActivity extends AppCompatActivity {
         categoryRecycler.setLayoutManager(new GridLayoutManager(this,4));
         categoryRecycler.setAdapter(categoryRecyclerAdapter);
         categoryRecyclerAdapter.notifyDataSetChanged();
+        categoryRecyclerAdapter.setOnItemClick(new CategoryRecyclerAdapter.onItemClick() {
+            @Override
+            public void itemClick(Category category) {
+                startActivity(new Intent(HomeActivity.this, SubCategoryActivity.class).putExtra("category", category));
+            }
+        });
     }
     private ArrayList<Category> getCategoryData(){
         ArrayList<Category> categories = new ArrayList<>();
@@ -153,5 +160,6 @@ public class HomeActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.home_menu, menu);
         return true;
     }
+
     //endregion
 }
