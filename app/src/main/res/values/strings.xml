@@ -31,4 +31,7 @@
     <string name="price_demo">$80</string>
     <string name="one_kg">1 kg</string>
     <string name="add_to_cart">Add to cart</string>
+    <string name="dummy_description">" Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."</string>
+    <string name="buy_now">Buy Now</string>
+    <string name="short_description">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used.</string>
 </resources>

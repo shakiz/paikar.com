@@ -1,15 +1,14 @@
 <androidx.cardview.widget.CardView
+    android:id="@+id/item_card_view"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     card_view:cardUseCompatPadding="true"
     android:layout_margin="4dp"
-    card_view:cardCornerRadius="8dp"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
+    card_view:cardCornerRadius="8dp">
 
     <LinearLayout
-        android:id="@+id/item_card_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/item_back_shape"
@@ -21,7 +20,7 @@
         <ImageView
             android:id="@+id/ImageResId"
             android:layout_width="match_parent"
-            android:layout_height="128dp"
+            android:layout_height="112dp"
             android:layout_gravity="center"
             android:layout_centerHorizontal="true"
             android:scaleType="fitXY"
@@ -29,11 +28,12 @@
             android:tag="Drawable" />
 
         <TextView
-            android:id="@+id/Price"
+            android:id="@+id/ProductPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/ImageResId"
             android:layout_centerVertical="true"
+            android:fontFamily="monospace"
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
             android:layout_marginTop="8dp"
@@ -46,11 +46,12 @@
             android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/Name"
+            android:id="@+id/ProductTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/ImageResId"
             android:layout_centerVertical="true"
+            android:fontFamily="monospace"
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
             android:layout_marginTop="8dp"
@@ -69,6 +70,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/ImageResId"
             android:layout_centerVertical="true"
+            android:fontFamily="monospace"
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
             android:layout_marginTop="8dp"
@@ -86,6 +88,8 @@
             android:layout_height="wrap_content"
             android:background="@drawable/green_gradient_color"
             android:textColor="@color/md_white_1000"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
             android:textSize="16sp"
             android:layout_gravity="center"
             android:gravity="center"

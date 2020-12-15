@@ -1,21 +1,18 @@
 package com.client.paikarcom.activities.product;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.WindowManager;
-import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.client.paikarcom.R;
+import com.client.paikarcom.activities.home.HomeActivity;
 import com.client.paikarcom.adapters.SubCategoryRecyclerAdapter;
 import com.client.paikarcom.databinding.ActivitySubCategoryBinding;
 import com.client.paikarcom.models.Category;
-
 import java.util.ArrayList;
 
 public class SubCategoryActivity extends AppCompatActivity {
@@ -81,7 +78,7 @@ public class SubCategoryActivity extends AppCompatActivity {
         subCategoryRecyclerAdapter.setOnItemClick(new SubCategoryRecyclerAdapter.onItemClick() {
             @Override
             public void itemClick(Category category) {
-
+                startActivity(new Intent(SubCategoryActivity.this, ProductListActivity.class).putExtra("category",category));
             }
         });
     }
@@ -101,6 +98,11 @@ public class SubCategoryActivity extends AppCompatActivity {
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(SubCategoryActivity.this, HomeActivity.class));
     }
     //endregion
 }
