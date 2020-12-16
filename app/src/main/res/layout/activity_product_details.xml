@@ -4,6 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable name="product" type="com.client.paikarcom.models.Product"/>
+    </data>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -26,18 +30,24 @@
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:fillViewport="true"
             android:layout_below="@id/toolbar">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
                 android:orientation="vertical">
 
+                <!--Product basic details part-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
                     android:orientation="horizontal"
                     android:weightSum="2">
 
@@ -50,10 +60,10 @@
                         <androidx.cardview.widget.CardView
                             android:layout_width="match_parent"
                             android:layout_height="160dp"
-                            app:cardUseCompatPadding="true"
                             app:cardCornerRadius="8dp">
 
                             <ImageView
+                                android:id="@+id/ProductThumbnail"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:scaleType="fitXY"
@@ -74,7 +84,8 @@
                             android:id="@+id/ProductTitle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/rice_pulses_flour"
+                            android:text="@{product.productTitle}"
+                            android:hint="@string/rice_pulses_flour"
                             android:ellipsize="end"
                             android:maxLines="2"
                             android:textSize="18sp"
@@ -86,7 +97,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:text="@string/short_description"
+                            android:hint="@string/short_description"
+                            android:text="@{product.productSmallDescription}"
                             android:ellipsize="end"
                             android:maxLines="2"
                             android:textSize="14sp"
@@ -95,14 +107,17 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:paddingTop="2dp"
+                            android:paddingBottom="2dp"
+                            android:layout_marginTop="8dp"
                             android:orientation="horizontal">
 
                             <TextView
                                 android:id="@+id/ProductPrice"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="4dp"
-                                android:text="@string/price_demo"
+                                android:hint="@string/price_demo"
+                                android:text="@{Double.toString(product.productPrice)}"
                                 android:ellipsize="end"
                                 android:maxLines="2"
                                 android:textSize="14sp"
@@ -112,9 +127,10 @@
                                 android:id="@+id/ProductOldPrice"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="16sp"
-                                android:layout_marginTop="4dp"
-                                android:text="@string/price_demo"
+                                android:visibility="gone"
+                                android:layout_marginLeft="16dp"
+                                android:hint="@string/price_demo"
+                                android:text="@{Double.toString(product.productOldPrice)}"
                                 android:ellipsize="end"
                                 android:maxLines="2"
                                 android:textSize="14sp"
@@ -122,9 +138,168 @@
 
                         </LinearLayout>
 
+                        <LinearLayout
+                            android:id="@+id/quantityLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="2dp"
+                            android:paddingBottom="2dp"
+                            android:layout_marginTop="8dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/weight_in_kg"
+                                android:ellipsize="end"
+                                android:maxLines="2"
+                                android:textSize="14sp"
+                                android:textColor="@color/md_grey_800"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="32dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:background="@drawable/button_buy_now"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/removeQuantity"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_marginRight="8dp"
+                                    android:padding="4dp"
+                                    android:clickable="true"
+                                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                                    android:src="@drawable/ic_icon_minus"/>
+
+                                <TextView
+                                    android:id="@+id/quantityText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    android:text="@string/sample_quantity"
+                                    android:ellipsize="end"
+                                    android:maxLines="2"
+                                    android:textSize="14sp"
+                                    android:textColor="@color/md_grey_800"/>
+
+                                <ImageView
+                                    android:id="@+id/addQuantity"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:padding="4dp"
+                                    android:clickable="true"
+                                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                                    android:src="@drawable/ic_icon_add"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/ProductStockAvailability"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="@string/available"
+                            android:ellipsize="end"
+                            android:maxLines="2"
+                            android:textSize="14sp"
+                            android:textColor="@color/md_deep_orange_500"/>
+
                     </LinearLayout>
 
                 </LinearLayout>
+
+                <!--Product details images part-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/sampleImage1"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginRight="8dp"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        app:cardCornerRadius="4dp">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/sample_1"/>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/sampleImage2"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        app:cardCornerRadius="4dp">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/sample_2"/>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/sampleImage3"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginLeft="8dp"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        app:cardCornerRadius="4dp">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/sample_3"/>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/description"
+                    android:textColor="@color/md_grey_800"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/ProductDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@{product.productDescription}"
+                    android:hint="@string/dummy_description"
+                    android:textColor="@color/md_grey_800"
+                    android:textSize="14sp"/>
 
             </LinearLayout>
 

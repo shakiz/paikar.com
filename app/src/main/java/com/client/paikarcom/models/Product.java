@@ -1,6 +1,9 @@
 package com.client.paikarcom.models;
 
-public class Product {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Product implements Parcelable {
     private int ProductId;
     private String ProductTitle;
     private String ProductSmallDescription;
@@ -94,5 +97,47 @@ public class Product {
 
     public void setAmountInKg(double amountInKg) {
         AmountInKg = amountInKg;
+    }
+
+    protected Product(Parcel in) {
+        ProductId = in.readInt();
+        ProductTitle = in.readString();
+        ProductSmallDescription = in.readString();
+        ProductDescription = in.readString();
+        ProductPrice = in.readDouble();
+        ProductOldPrice = in.readDouble();
+        ProductImages = in.createIntArray();
+        ProductStockAvailability = in.readByte() != 0;
+        AmountInKg = in.readDouble();
+    }
+
+    public static final Creator<Product> CREATOR = new Creator<Product>() {
+        @Override
+        public Product createFromParcel(Parcel in) {
+            return new Product(in);
+        }
+
+        @Override
+        public Product[] newArray(int size) {
+            return new Product[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(ProductId);
+        dest.writeString(ProductTitle);
+        dest.writeString(ProductSmallDescription);
+        dest.writeString(ProductDescription);
+        dest.writeDouble(ProductPrice);
+        dest.writeDouble(ProductOldPrice);
+        dest.writeIntArray(ProductImages);
+        dest.writeByte((byte) (ProductStockAvailability ? 1 : 0));
+        dest.writeDouble(AmountInKg);
     }
 }

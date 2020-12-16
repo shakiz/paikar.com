@@ -4,10 +4,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.client.paikarcom.R;
@@ -62,7 +62,7 @@ public class ProductRecyclerAdapter extends RecyclerView.Adapter<ProductRecycler
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        CardView item_card_view;
+        LinearLayout item_card_view;
         TextView ProductPrice, ProductTitle, AmountInKg;
         ImageView ImageResId;
         public ViewHolder(@NonNull View itemView) {
