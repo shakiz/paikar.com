@@ -42,4 +42,7 @@
     <string name="available">Available</string>
     <string name="not_available">Not Available</string>
     <string name="description">Description</string>
+    <string name="item_added_to_cart">Item has been added to cart</string>
+    <string name="go_to_cart">Go to cart</string>
+    <string name="quantity_must_be_greater_than_zero">Quantity must be greater than zero</string>
 </resources>

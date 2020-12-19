@@ -22,6 +22,7 @@ import com.client.paikarcom.R;
 import com.client.paikarcom.activities.product.SubCategoryActivity;
 import com.client.paikarcom.adapters.CategoryRecyclerAdapter;
 import com.client.paikarcom.adapters.SlidingImageAdapter;
+import com.client.paikarcom.extras.Tools;
 import com.client.paikarcom.models.Category;
 import com.google.android.material.tabs.TabLayout;
 
@@ -41,6 +42,7 @@ public class HomeActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
     private Toolbar toolbar;
     private ActionBarDrawerToggle mDrawerToggle;
+    private Tools tools;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +75,7 @@ public class HomeActivity extends AppCompatActivity {
         mPager = (ViewPager) findViewById(R.id.pager);
         tabLayout = (TabLayout) findViewById(R.id.tabDots);
         categoryRecycler = findViewById(R.id.categoryRecycler);
+        tools = new Tools(this);
     }
     //endregion
 
@@ -159,6 +162,11 @@ public class HomeActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.home_menu, menu);
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        tools.exitApp();
     }
 
     //endregion

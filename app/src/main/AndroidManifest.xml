@@ -31,7 +31,7 @@
             android:name=".activities.notification.NotificationActivity"
             android:theme="@style/AppThemeNoActionBar"/>
         <activity
-            android:name=".activities.product.OrderPlacementActivity"
+            android:name=".activities.product.ShoppingCartActivity"
             android:theme="@style/AppThemeNoActionBar"/>
         <activity
             android:name=".activities.product.ProductDetailsActivity"

@@ -1,21 +1,26 @@
 package com.client.paikarcom.activities.product;
 
+import android.content.Intent;
+import android.graphics.Paint;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 
-import android.content.Intent;
-import android.graphics.Paint;
-import android.os.Bundle;
-import android.view.View;
-import android.view.WindowManager;
-import android.widget.Toast;
-
 import com.client.paikarcom.R;
 import com.client.paikarcom.databinding.ActivityProductDetailsBinding;
 import com.client.paikarcom.models.Category;
 import com.client.paikarcom.models.Product;
+
+import de.mateware.snacky.Snacky;
 
 public class ProductDetailsActivity extends AppCompatActivity {
     private Toolbar toolbar;
@@ -133,6 +138,32 @@ public class ProductDetailsActivity extends AppCompatActivity {
             }
         });
         //endregion
+
+        //region add to cart and buy now listeners
+        activityProductDetailsBinding.addToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (quantity > 0){
+                    Snacky.builder().setText(getString(R.string.item_added_to_cart)).build();
+                }
+                else{
+                    Toast.makeText(ProductDetailsActivity.this, getString(R.string.quantity_must_be_greater_than_zero), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        activityProductDetailsBinding.buyNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (quantity > 0){
+
+                }
+                else{
+                    Toast.makeText(ProductDetailsActivity.this, getString(R.string.quantity_must_be_greater_than_zero), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        //endregion
     }
     //endregion
 
@@ -152,6 +183,16 @@ public class ProductDetailsActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         startActivity(new Intent(ProductDetailsActivity.this, ProductListActivity.class).putExtra("category",category));
+    }
+
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.home_menu, menu);
+        return true;
     }
     //endregion
 }

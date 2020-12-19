@@ -1,5 +1,6 @@
 package com.client.paikarcom.activities.product;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
@@ -8,6 +9,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.WindowManager;
 
 import com.client.paikarcom.R;
@@ -109,6 +112,16 @@ public class ProductListActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         startActivity(new Intent(ProductListActivity.this, SubCategoryActivity.class).putExtra("category",category));
+    }
+
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.home_menu, menu);
+        return true;
     }
     //endregion
 }

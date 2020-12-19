@@ -9,6 +9,7 @@
     </data>
 
     <RelativeLayout
+        android:id="@+id/mainLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/md_white_1000"
@@ -171,7 +172,7 @@
                                     android:layout_width="24dp"
                                     android:layout_height="24dp"
                                     android:layout_marginRight="8dp"
-                                    android:padding="4dp"
+                                    android:padding="8dp"
                                     android:clickable="true"
                                     android:foreground="?attr/selectableItemBackgroundBorderless"
                                     android:src="@drawable/ic_icon_minus"/>
@@ -194,7 +195,7 @@
                                     android:layout_width="24dp"
                                     android:layout_height="24dp"
                                     android:layout_marginLeft="8dp"
-                                    android:padding="4dp"
+                                    android:padding="8dp"
                                     android:clickable="true"
                                     android:foreground="?attr/selectableItemBackgroundBorderless"
                                     android:src="@drawable/ic_icon_add"/>
@@ -308,40 +309,47 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
-            android:weightSum="2"
-            android:orientation="horizontal"
-            android:layout_alignParentBottom="true">
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
 
-            <android.widget.Button
-                android:id="@+id/buyNow"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="42dp"
-                android:text="@string/buy_now"
-                android:textColor="@color/md_grey_800"
-                android:layout_marginRight="8dp"
-                android:background="@drawable/button_buy_now"
-                android:clickable="true"
-                android:foreground="?attr/selectableItemBackgroundBorderless"/>
-
-            <android.widget.Button
-                android:id="@+id/addToCart"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="42dp"
+            <LinearLayout
+                android:id="@+id/buyNowLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
-                android:text="@string/add_to_cart"
-                android:textColor="@color/md_white_1000"
-                android:background="@drawable/green_gradient_color_button"
-                android:clickable="true"
-                android:foreground="?attr/selectableItemBackgroundBorderless"/>
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:weightSum="2"
+                android:orientation="horizontal">
+
+                <android.widget.Button
+                    android:id="@+id/buyNow"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="42dp"
+                    android:text="@string/buy_now"
+                    android:textColor="@color/md_grey_800"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/button_buy_now"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"/>
+
+                <android.widget.Button
+                    android:id="@+id/addToCart"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="42dp"
+                    android:layout_marginLeft="8dp"
+                    android:text="@string/add_to_cart"
+                    android:textColor="@color/md_white_1000"
+                    android:background="@drawable/green_gradient_color_button"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 
     </RelativeLayout>
-
 
 </layout>
