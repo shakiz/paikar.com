@@ -19,6 +19,8 @@ import android.view.WindowManager;
 import android.widget.ListView;
 
 import com.client.paikarcom.R;
+import com.client.paikarcom.activities.product.ProductDetailsActivity;
+import com.client.paikarcom.activities.product.ShoppingCartActivity;
 import com.client.paikarcom.activities.product.SubCategoryActivity;
 import com.client.paikarcom.adapters.CategoryRecyclerAdapter;
 import com.client.paikarcom.adapters.SlidingImageAdapter;
@@ -150,12 +152,16 @@ public class HomeActivity extends AppCompatActivity {
     //endregion
 
     //region activity components
-    @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (mDrawerToggle.onOptionsItemSelected(item)) {
-            return true;
+        switch (item.getItemId()) {
+            case R.id.bag:
+                startActivity(new Intent(HomeActivity.this, ShoppingCartActivity.class).putExtra("from","home"));
+                return true;
+            case R.id.call:
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
     }
 
     @Override

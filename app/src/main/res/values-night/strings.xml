@@ -41,4 +41,5 @@
     <string name="item_added_to_cart">Item has been added to cart</string>
     <string name="go_to_cart">Go to cart</string>
     <string name="quantity_must_be_greater_than_zero">Quantity must be greater than zero</string>
+    <string name="shopping_cart">Shopping Cart</string>
 </resources>

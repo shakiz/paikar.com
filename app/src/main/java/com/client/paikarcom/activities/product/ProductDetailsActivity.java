@@ -1,5 +1,11 @@
 package com.client.paikarcom.activities.product;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
+import androidx.databinding.DataBindingUtil;
+
 import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
@@ -9,18 +15,12 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
-import androidx.databinding.DataBindingUtil;
-
 import com.client.paikarcom.R;
 import com.client.paikarcom.databinding.ActivityProductDetailsBinding;
 import com.client.paikarcom.models.Category;
 import com.client.paikarcom.models.Product;
-
-import de.mateware.snacky.Snacky;
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
 
 public class ProductDetailsActivity extends AppCompatActivity {
     private Toolbar toolbar;
@@ -144,7 +144,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (quantity > 0){
-                    Snacky.builder().setText(getString(R.string.item_added_to_cart)).build();
+                    Snackbar.make(activityProductDetailsBinding.mainLayout,getString(R.string.item_added_to_cart), BaseTransientBottomBar.LENGTH_SHORT).show();
                 }
                 else{
                     Toast.makeText(ProductDetailsActivity.this, getString(R.string.quantity_must_be_greater_than_zero), Toast.LENGTH_SHORT).show();
@@ -186,7 +186,16 @@ public class ProductDetailsActivity extends AppCompatActivity {
     }
 
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        return super.onOptionsItemSelected(item);
+        switch (item.getItemId()) {
+            case R.id.bag:
+                startActivity(new Intent(ProductDetailsActivity.this, ShoppingCartActivity.class).putExtra("from","productDetails").putExtra("category",category)
+                        .putExtra("product",product));
+                return true;
+            case R.id.call:
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override
