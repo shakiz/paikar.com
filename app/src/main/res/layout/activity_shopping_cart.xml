@@ -49,7 +49,7 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/shoppingCartRecycler"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
@@ -58,9 +58,28 @@
                     app:spanCount="1"
                     tools:listitem="@layout/adapter_recycler_shopping_cart_list"/>
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"/>
+
             </LinearLayout>
 
         </androidx.core.widget.NestedScrollView>
+
+        <android.widget.Button
+            android:id="@+id/placeOrderButton"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textAllCaps="true"
+            android:text="@string/place_order"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/green_gradient_color_button"
+            android:textColor="@color/md_white_1000"
+            android:layout_marginBottom="16dp"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"/>
 
     </RelativeLayout>
 

@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,11 +15,17 @@ import android.view.WindowManager;
 
 import com.client.paikarcom.R;
 import com.client.paikarcom.activities.home.HomeActivity;
+import com.client.paikarcom.adapters.ShoppingCartRecyclerAdapter;
+import com.client.paikarcom.databinding.ActivityShoppingCartBinding;
 import com.client.paikarcom.models.Category;
 import com.client.paikarcom.models.Product;
 
+import java.util.ArrayList;
+
 public class ShoppingCartActivity extends AppCompatActivity {
     private Toolbar toolbar;
+    private ActivityShoppingCartBinding activityShoppingCartBinding;
+    private ShoppingCartRecyclerAdapter shoppingCartRecyclerAdapter;
     private String from;
     private Category category;
     private Product product;
@@ -25,7 +33,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shopping_cart);
+        activityShoppingCartBinding = DataBindingUtil.setContentView(this, R.layout.activity_shopping_cart);
 
         //region setup toolBar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -66,7 +74,41 @@ public class ShoppingCartActivity extends AppCompatActivity {
 
     //region perform UI interactions
     private void bindUiWithComponents() {
+        //region set sub category recycler adapter
+        setSubCategoryRecycler();
+        //endregion
+    }
+    //endregion
 
+    //region set category recycler adapter
+    private void setSubCategoryRecycler(){
+        shoppingCartRecyclerAdapter = new ShoppingCartRecyclerAdapter(getProducts());
+        activityShoppingCartBinding.shoppingCartRecycler.setLayoutManager(new LinearLayoutManager(this));
+        activityShoppingCartBinding.shoppingCartRecycler.setAdapter(shoppingCartRecyclerAdapter);
+        shoppingCartRecyclerAdapter.notifyDataSetChanged();
+
+        shoppingCartRecyclerAdapter.setOnRemoveClick(new ShoppingCartRecyclerAdapter.onRemoveClick() {
+            @Override
+            public void itemClick(ArrayList<Product> products) {
+                shoppingCartRecyclerAdapter.notifyDataSetChanged();
+            }
+        });
+    }
+    private ArrayList<Product> getProducts(){
+        ArrayList<Product> allProductList = new ArrayList<>();
+        allProductList.add(new Product(1,"Katarivog","It is a long established fact that a reader.",
+                getString(R.string.dummy_description),55,58,new int[]{R.drawable.sample_1,R.drawable.sample_2,R.drawable.sample_3},true,1));
+        allProductList.add(new Product(2,"Najir Shail","There are many variations of passages of Lorem Ipsum available",
+                getString(R.string.dummy_description),60,0,new int[]{R.drawable.sample_1,R.drawable.sample_2,R.drawable.sample_3},true,1));
+        allProductList.add(new Product(3,"Miniket (Thin)","Contrary to popular belief",
+                getString(R.string.dummy_description),45,0, new int[]{R.drawable.sample_1,R.drawable.sample_2,R.drawable.sample_3},true,1));
+        allProductList.add(new Product(4,"Chini Gura","The standard chunk of Lorem Ipsum",
+                getString(R.string.dummy_description), 52,55, new int[]{R.drawable.sample_1,R.drawable.sample_2,R.drawable.sample_3},true,1));
+        allProductList.add(new Product(5,"Pani Gura","There are many variations of passages",
+                getString(R.string.dummy_description), 65,0, new int[]{R.drawable.sample_1,R.drawable.sample_2,R.drawable.sample_3},false,1));
+        allProductList.add(new Product(6,"Mota Chal","It was popularised in the 1960s",
+                getString(R.string.dummy_description), 40,46, new int[]{R.drawable.sample_1,R.drawable.sample_2,R.drawable.sample_3},true,1));
+        return allProductList;
     }
     //endregion
 

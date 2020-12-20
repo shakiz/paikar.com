@@ -24,7 +24,7 @@
     <string name="flour">Flour</string>
     <string name="suzy">Suzy</string>
     <string name="semai">Semai</string>
-    <string name="price_demo">$80</string>
+    <string name="price_demo">$ 80</string>
     <string name="one_kg">1 kg</string>
     <string name="add_to_cart">Add to cart</string>
     <string name="dummy_description">The dominant food crop of Bangladesh is rice, accounting for about 75 percent of agricultural land use (and 28 percent of GDP).
@@ -42,4 +42,5 @@
     <string name="go_to_cart">Go to cart</string>
     <string name="quantity_must_be_greater_than_zero">Quantity must be greater than zero</string>
     <string name="shopping_cart">Shopping Cart</string>
+    <string name="place_order">Place Order</string>
 </resources>
