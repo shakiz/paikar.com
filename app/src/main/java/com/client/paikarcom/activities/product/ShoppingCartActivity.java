@@ -6,20 +6,18 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
-
 import com.client.paikarcom.R;
 import com.client.paikarcom.activities.home.HomeActivity;
 import com.client.paikarcom.adapters.ShoppingCartRecyclerAdapter;
 import com.client.paikarcom.databinding.ActivityShoppingCartBinding;
+import com.client.paikarcom.extras.OrderPlacementManager;
 import com.client.paikarcom.models.Category;
 import com.client.paikarcom.models.Product;
-
 import java.util.ArrayList;
 
 public class ShoppingCartActivity extends AppCompatActivity {
@@ -29,6 +27,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
     private String from;
     private Category category;
     private Product product;
+    private OrderPlacementManager orderPlacementManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +68,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
 
     //region init UI
     private void initUI() {
+        orderPlacementManager = new OrderPlacementManager(this);
     }
     //endregion
 
@@ -76,6 +76,21 @@ public class ShoppingCartActivity extends AppCompatActivity {
     private void bindUiWithComponents() {
         //region set sub category recycler adapter
         setSubCategoryRecycler();
+        //endregion
+
+        //region place order button
+        orderPlacementManager.setSubmitOrderListener(new OrderPlacementManager.submitOrderListener() {
+            @Override
+            public void onCouponApply(double amount) {
+
+            }
+
+            @Override
+            public void onSubmitClick() {
+
+            }
+        });
+        orderPlacementManager.initSearchPanel(activityShoppingCartBinding.placeOrderButton,4,2300);
         //endregion
     }
     //endregion

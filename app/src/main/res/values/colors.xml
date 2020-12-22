@@ -337,4 +337,6 @@
         <item>@color/md_cyan_300</item>
         <item>@color/md_cyan_300</item>
     </array>
+
+    <color name="apply_coupon_color">#FCBF00</color>
 </resources>

@@ -47,4 +47,13 @@
     <string name="quantity_must_be_greater_than_zero">Quantity must be greater than zero</string>
     <string name="shopping_cart">Shopping Cart</string>
     <string name="place_order">Place Order</string>
+    <string name="submit_order">Submit Order</string>
+    <string name="order_details">Order Details</string>
+    <string name="total">Total</string>
+    <string name="dummy_no_of_product">(4 Products)</string>
+    <string name="delivery_fee">Delivery Fee</string>
+    <string name="coupon_code">Coupon Code</string>
+    <string name="apply">Apply</string>
+    <string name="submit">Submit</string>
+    <string name="please_enter_coupon_code">Please enter coupon code</string>
 </resources>
