@@ -339,4 +339,5 @@
     </array>
 
     <color name="apply_coupon_color">#FCBF00</color>
+    <color name="toolbar_title_color">#219653</color>
 </resources>

@@ -61,11 +61,11 @@
             android:name=".activities.companyinfo.AboutUsActivity"
             android:theme="@style/AppThemeNoActionBar"/>
         <activity
-            android:name=".activities.auth.RegistrationActivity"
-            android:theme="@style/AppThemeNoActionBar"/>
+            android:name=".activities.auth.SignUpActivity"
+            android:theme="@style/AppThemeAuth"/>
         <activity
-            android:name=".activities.auth.LoginActivity"
-            android:theme="@style/AppThemeNoActionBar"/>
+            android:name=".activities.auth.SignInActivity"
+            android:theme="@style/AppThemeAuth"/>
     </application>
 
 </manifest>

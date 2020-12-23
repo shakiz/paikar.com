@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/md_white_1000"
+        tools:context=".activities.auth.SignInActivity">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/appName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/app_name"
+                    android:textColor="@color/toolbar_title_color"
+                    android:textSize="24sp"/>
+
+                <ImageView
+                    android:id="@+id/illustrationSignIn"
+                    android:layout_below="@id/appName"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:src="@drawable/ic_illustration_sign_in"
+                    android:scaleType="center"/>
+
+                <TextView
+                    android:id="@+id/signInText"
+                    android:layout_below="@id/illustrationSignIn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/sign_in"
+                    android:textColor="@color/md_black_1000"
+                    android:textSize="24sp"/>
+
+                <LinearLayout
+                    android:layout_below="@id/signInText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/MobileNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/edit_text_back"
+                        android:inputType="text"
+                        android:focusable="true"
+                        android:imeOptions="actionDone"
+                        android:paddingLeft="8dp"
+                        android:scrollHorizontally="true"
+                        android:maxLines="1"
+                        android:drawableLeft="@drawable/ic_icon_phone_small"
+                        android:drawableStart="@drawable/ic_icon_phone_small"
+                        android:drawablePadding="8dp"
+                        android:layout_marginTop="16dp"
+                        android:hint="@string/phone_number"
+                        android:textSize="14sp"
+                        android:textColorHint="@color/md_grey_800"
+                        android:textColor="@color/md_grey_800"/>
+
+                    <android.widget.Button
+                        android:id="@+id/nextButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="16dp"
+                        android:textAllCaps="true"
+                        android:text="@string/next"
+                        android:background="@drawable/green_gradient_color_button"
+                        android:textColor="@color/md_white_1000"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dont_have_an_account"
+                        android:layout_marginRight="4dp"
+                        android:gravity="center|right"
+                        android:textColor="@color/md_black_1000"
+                        android:textSize="14sp"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/textCreateNewAccount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|left"
+                            android:layout_marginLeft="4dp"
+                            android:text="@string/create_new_account"
+                            android:textColor="@color/toolbar_title_color"
+                            android:clickable="true"
+                            android:foreground="?attr/selectableItemBackgroundBorderless"
+                            android:textStyle="bold"
+                            android:textSize="14sp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+</layout>

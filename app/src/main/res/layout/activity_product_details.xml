@@ -23,7 +23,7 @@
             android:translationZ="2dp"
             android:layout_marginBottom="8dp"
             android:background="@color/md_white_1000"
-            app:titleTextColor="@color/md_green_800"
+            app:titleTextColor="@color/toolbar_title_color"
             android:orientation="horizontal">
 
         </androidx.appcompat.widget.Toolbar>

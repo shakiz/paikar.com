@@ -42,4 +42,15 @@
         <item name="android:windowEnterAnimation">@anim/push_left_in</item>
         <item name="android:windowExitAnimation">@anim/push_left_out</item>
     </style>
+
+    <!-- Splash theme. -->
+    <style name="AppThemeAuth" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/md_black_1000</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:background">@color/md_white_1000</item>
+    </style>
 </resources>
