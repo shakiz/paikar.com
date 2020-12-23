@@ -61,6 +61,7 @@
                         android:textSize="16sp" />
 
                     <TextView
+                        android:id="@+id/NoOfProducts"
                         android:layout_width="0dp"
                         android:layout_weight=".7"
                         android:layout_height="wrap_content"
@@ -136,7 +137,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1.5"
                     android:layout_height="match_parent"
-                    android:text="@string/coupon_code"
+                    android:hint="@string/coupon_code"
                     android:focusable="true"
                     android:maxLines="1"
                     android:ellipsize="end"

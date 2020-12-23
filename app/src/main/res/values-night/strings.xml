@@ -52,4 +52,7 @@
     <string name="apply">Apply</string>
     <string name="submit">Submit</string>
     <string name="please_enter_coupon_code">Please enter coupon code</string>
+    <string name="go_back_home">Go Back Home</string>
+    <string name="your_order_was_successful">Your order was successful</string>
+    <string name="an_agent_will_contact_with_you_within_twenty_four_hours">An agent will contact with you within 24 hours</string>
 </resources>

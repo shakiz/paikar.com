@@ -16,6 +16,7 @@ import com.client.paikarcom.activities.home.HomeActivity;
 import com.client.paikarcom.adapters.ShoppingCartRecyclerAdapter;
 import com.client.paikarcom.databinding.ActivityShoppingCartBinding;
 import com.client.paikarcom.extras.OrderPlacementManager;
+import com.client.paikarcom.extras.Tools;
 import com.client.paikarcom.models.Category;
 import com.client.paikarcom.models.Product;
 import java.util.ArrayList;
@@ -28,6 +29,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
     private Category category;
     private Product product;
     private OrderPlacementManager orderPlacementManager;
+    private Tools tools;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +71,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
     //region init UI
     private void initUI() {
         orderPlacementManager = new OrderPlacementManager(this);
+        tools = new Tools(this);
     }
     //endregion
 
@@ -79,18 +82,20 @@ public class ShoppingCartActivity extends AppCompatActivity {
         //endregion
 
         //region place order button
-        orderPlacementManager.setSubmitOrderListener(new OrderPlacementManager.submitOrderListener() {
-            @Override
-            public void onCouponApply(double amount) {
-
-            }
-
+        orderPlacementManager.setOnSubmitOrderClick(new OrderPlacementManager.onSubmitOrderClick() {
             @Override
             public void onSubmitClick() {
-
+                tools.getOrderConfirmationDialog();
+                tools.setOnBackClick(new Tools.onBackClick() {
+                    @Override
+                    public void onBackClick() {
+                        tools.closeOrderConfirmationDialog();
+                        onBackPressed();
+                    }
+                });
             }
         });
-        orderPlacementManager.initSearchPanel(activityShoppingCartBinding.placeOrderButton,4,2300);
+        orderPlacementManager.onOrderPlacement(activityShoppingCartBinding.placeOrderButton,4,2300,55);
         //endregion
     }
     //endregion
