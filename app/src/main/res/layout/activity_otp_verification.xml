@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/md_white_1000"
+        tools:context=".activities.auth.SignInActivity">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/app_name"
+                    android:textColor="@color/toolbar_title_color"
+                    android:textSize="24sp"/>
+
+                <ImageView
+                    android:layout_below="@id/appName"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_marginTop="24dp"
+                    android:src="@drawable/ic_illustration_otp"
+                    android:scaleType="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/otp_verification"
+                    android:textColor="@color/md_black_1000"
+                    android:textSize="24sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/we_have_sent_you_four_digit_otp"
+                    android:textColor="@color/md_black_1000"
+                    android:textSize="16sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|right"
+                        android:layout_marginRight="4dp"
+                        android:gravity="center|right"
+                        android:text="@string/your_number"
+                        android:textColor="@color/md_black_1000"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|left"
+                        android:layout_marginLeft="4dp"
+                        android:gravity="center|left"
+                        android:text="@string/dummy_mobile_number"
+                        android:textColor="@color/md_black_1000"
+                        android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="vertical">
+
+                    <com.chaos.view.PinView
+                        android:id="@+id/otpCode"
+                        style="@style/PinWidget.PinView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:cursorVisible="true"
+                        android:hint="----"
+                        android:inputType="text"
+                        android:padding="4dp"
+                        android:textColor="@color/md_grey_600"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:cursorColor="@color/md_green_200"
+                        app:cursorWidth="2dp"
+                        app:hideLineWhenFilled="true"
+                        app:itemCount="4"
+                        app:itemHeight="48dp"
+                        app:itemRadius="4dp"
+                        app:itemSpacing="0dp"
+                        app:itemWidth="48dp"
+                        app:lineColor="@color/md_grey_300"
+                        app:lineWidth="2dp"
+                        app:viewType="rectangle" />
+
+                    <LinearLayout
+                        android:id="@+id/errorMessageLayout"
+                        android:visibility="gone"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-2dp"
+                            android:text="*"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/error_text_color"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/message"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:layout_marginLeft="4dp"
+                            android:textColor="@color/error_text_color"
+                            android:textSize="14sp"
+                            android:text="@string/message"/>
+
+                    </LinearLayout>
+
+                    <android.widget.Button
+                        android:id="@+id/submitOtpButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="24dp"
+                        android:textAllCaps="true"
+                        android:text="@string/submit"
+                        android:background="@drawable/green_gradient_color_button"
+                        android:textColor="@color/md_white_1000"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/getCodeAgainInSeconds"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginLeft="2dp"
+                    android:text="@string/get_code_again_with_seconds"
+                    android:textColor="@color/toolbar_title_color"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:textStyle="bold"
+                    android:textSize="14sp"/>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+</layout>

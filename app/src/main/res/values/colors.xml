@@ -340,4 +340,5 @@
 
     <color name="apply_coupon_color">#FCBF00</color>
     <color name="toolbar_title_color">#219653</color>
+    <color name="error_text_color">#F15A38</color>
 </resources>

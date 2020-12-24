@@ -2,7 +2,6 @@ package com.client.paikarcom.activities.auth;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -41,6 +40,13 @@ public class SignUpActivity extends AppCompatActivity {
                 startActivity(new Intent(SignUpActivity.this,SignInActivity.class));
             }
         });
+
+        activitySignUpBinding.nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SignUpActivity.this, OtpVerificationActivity.class).putExtra("mobile",activitySignUpBinding.MobileNo.getText().toString()));
+            }
+        });
     }
     //endregion
 
@@ -67,6 +73,7 @@ public class SignUpActivity extends AppCompatActivity {
     //region activity components
     @Override
     public void onBackPressed() {
+        startActivity(new Intent(SignUpActivity.this, SignInActivity.class));
     }
     //endregion
 }

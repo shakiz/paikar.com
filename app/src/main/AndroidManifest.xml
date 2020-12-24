@@ -10,14 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Paikarcom">
         <activity
-            android:name=".activities.product.ProductListActivity"
-            android:theme="@style/AppThemeNoActionBar"/>
-        <activity
-            android:name=".activities.product.SubCategoryActivity"
-            android:theme="@style/AppThemeNoActionBar" />
-        <activity
-            android:name=".activities.home.HomeActivity"
-            android:theme="@style/AppThemeNoActionBar">
+            android:name=".activities.auth.SignInActivity"
+            android:theme="@style/AppThemeAuth">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,47 +19,56 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.profile.ProfileActivity"
+            android:name=".activities.auth.SignUpActivity"
+            android:theme="@style/AppThemeAuth" />
+        <activity
+            android:name=".activities.auth.OtpVerificationActivity"
+            android:theme="@style/AppThemeAuth"/>
+        <activity
+            android:name=".activities.product.ProductListActivity"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".activities.product.SubCategoryActivity"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".activities.home.HomeActivity"
             android:theme="@style/AppThemeNoActionBar"/>
+        <activity
+            android:name=".activities.profile.ProfileActivity"
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".activities.notification.NotificationActivity"
-            android:theme="@style/AppThemeNoActionBar"/>
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".activities.product.ShoppingCartActivity"
-            android:theme="@style/AppThemeNoActionBar"/>
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".activities.product.ProductDetailsActivity"
-            android:theme="@style/AppThemeNoActionBar"/>
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".activities.companyinfo.CreditPolicyActivity"
-            android:theme="@style/AppThemeNoActionBar"/>
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".activities.companyinfo.ReturnPolicyActivity"
-            android:theme="@style/AppThemeNoActionBar"/>
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".activities.companyinfo.ContactUsActivity"
-            android:theme="@style/AppThemeNoActionBar"/>
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".activities.companyinfo.ComplaintAndSuggestionActivity"
-            android:theme="@style/AppThemeNoActionBar"/>
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".activities.companyinfo.VisionActivity"
-            android:theme="@style/AppThemeNoActionBar"/>
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".activities.companyinfo.VehicleServiceActivity"
-            android:theme="@style/AppThemeNoActionBar"/>
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".activities.companyinfo.PaymentSystemActivity"
-            android:theme="@style/AppThemeNoActionBar"/>
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".activities.companyinfo.AboutUsActivity"
-            android:theme="@style/AppThemeNoActionBar"/>
-        <activity
-            android:name=".activities.auth.SignUpActivity"
-            android:theme="@style/AppThemeAuth"/>
-        <activity
-            android:name=".activities.auth.SignInActivity"
-            android:theme="@style/AppThemeAuth"/>
+            android:theme="@style/AppThemeNoActionBar" />
     </application>
 
 </manifest>

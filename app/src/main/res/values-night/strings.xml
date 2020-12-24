@@ -65,4 +65,14 @@
     <string name="phone_number">Phone Number</string>
     <string name="dont_have_an_account">Dont have an account?</string>
     <string name="create_new_account">Create new account</string>
+    <string name="otp_verification">OTP Verification</string>
+    <string name="we_have_sent_you_four_digit_otp">We have sent a code of four digits</string>
+    <string name="your_number">Your Number</string>
+    <string name="dummy_mobile_number">01745124578</string>
+    <string name="get_code_again">Get code again</string>
+    <string name="dummy_time">15 sec</string>
+    <string name="get_code_again_with_seconds">Get code again in 15 sec</string>
+    <string name="please_enter_mobile_number">Please enter mobile number</string>
+    <string name="please_enter_valid_otp">Please enter valid otp</string>
+    <string name="message">Message</string>
 </resources>
