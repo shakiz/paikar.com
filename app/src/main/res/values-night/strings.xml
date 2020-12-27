@@ -75,4 +75,5 @@
     <string name="please_enter_mobile_number">Please enter mobile number</string>
     <string name="please_enter_valid_otp">Please enter valid otp</string>
     <string name="message">Message</string>
+    <string name="my_profile">My Profile</string>
 </resources>

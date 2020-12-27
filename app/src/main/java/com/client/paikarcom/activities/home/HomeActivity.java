@@ -5,6 +5,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -26,13 +27,14 @@ import com.client.paikarcom.adapters.CategoryRecyclerAdapter;
 import com.client.paikarcom.adapters.SlidingImageAdapter;
 import com.client.paikarcom.extras.Tools;
 import com.client.paikarcom.models.Category;
+import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private static ViewPager mPager;
     private static TabLayout tabLayout;
     private static int currentPage = 0;
@@ -40,6 +42,7 @@ public class HomeActivity extends AppCompatActivity {
     private static final Integer[] IMAGES= {R.drawable.banner_image_1,R.drawable.banner_image_2,R.drawable.banner_image_3,R.drawable.banner_image_4,R.drawable.banner_image_5};
     private ArrayList<Integer> ImagesArray = new ArrayList<Integer>();
     private RecyclerView categoryRecycler;
+    private NavigationView nav_view;
     private CategoryRecyclerAdapter categoryRecyclerAdapter;
     private DrawerLayout mDrawerLayout;
     private Toolbar toolbar;
@@ -77,6 +80,7 @@ public class HomeActivity extends AppCompatActivity {
         mPager = (ViewPager) findViewById(R.id.pager);
         tabLayout = (TabLayout) findViewById(R.id.tabDots);
         categoryRecycler = findViewById(R.id.categoryRecycler);
+        nav_view = findViewById(R.id.nav_view);
         tools = new Tools(this);
     }
     //endregion
@@ -92,6 +96,10 @@ public class HomeActivity extends AppCompatActivity {
 
     //region perform UI interactions
     private void bindUiWithComponents() {
+        //region set nav drawer item click listener
+        nav_view.setNavigationItemSelectedListener(this);
+        //endregion
+
         //region viewpager for image slider
         for(int i=0;i<IMAGES.length;i++) {
             ImagesArray.add(IMAGES[i]);
@@ -170,9 +178,38 @@ public class HomeActivity extends AppCompatActivity {
         return true;
     }
 
+
+
     @Override
     public void onBackPressed() {
         tools.exitApp();
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.notification:
+                break;
+            case R.id.returnPolicy:
+                break;
+            case R.id.paymentSystem:
+                break;
+            case R.id.vehicle:
+                break;
+            case R.id.creditPolicy:
+                break;
+            case R.id.aboutUs:
+                break;
+            case R.id.contactUs:
+                break;
+            case R.id.vision:
+                break;
+            case R.id.complainOrSuggestion:
+                break;
+        }
+        //close navigation drawer
+        mDrawerLayout.closeDrawer(GravityCompat.START);
+        return true;
     }
 
     //endregion
