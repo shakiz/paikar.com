@@ -65,8 +65,15 @@
                     android:textSize="18sp"/>
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_width="128dp"
+                    android:layout_height="128dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="24dp"
+                    app:cardUseCompatPadding="false"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="2dp"
+                    android:translationZ="1dp">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -75,25 +82,47 @@
                         android:gravity="center">
 
                         <ImageView
-                            android:layout_width="160dp"
-                            android:layout_height="160dp"
-                            android:layout_marginTop="24dp"
-                            android:layout_marginBottom="24dp"
-                            android:src="@drawable/ic_illustration_sign_up"
+                            android:id="@+id/profileIcon"
+                            android:layout_width="128dp"
+                            android:layout_height="128dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/dummy_profile"
                             android:scaleType="center"/>
+
+                        <LinearLayout
+                            android:id="@+id/editProfileImageLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:gravity="center"
+                            android:layout_centerHorizontal="true"
+                            android:background="@color/colorTransparentLightGrey"
+                            android:clickable="true"
+                            android:foreground="?attr/selectableItemBackgroundBorderless"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/ic_icon_edit"
+                                android:layout_marginRight="4dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:text="@string/edit"
+                                android:textColor="@color/md_white_1000"
+                                android:textStyle="bold"
+                                android:gravity="center"
+                                android:paddingTop="4dp"
+                                android:paddingBottom="4dp"/>
+
+                        </LinearLayout>
 
                     </RelativeLayout>
 
                 </androidx.cardview.widget.CardView>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:text="@string/sign_up"
-                    android:textColor="@color/md_black_1000"
-                    android:textSize="24sp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -109,7 +138,7 @@
                         android:layout_height="40dp"
                         android:background="@drawable/edit_text_back"
                         android:inputType="text"
-                        android:focusable="true"
+                        android:focusable="false"
                         android:imeOptions="actionDone"
                         android:paddingLeft="8dp"
                         android:scrollHorizontally="true"
@@ -117,7 +146,7 @@
                         android:drawableLeft="@drawable/ic_icon_profile"
                         android:drawableStart="@drawable/ic_icon_profile"
                         android:drawablePadding="8dp"
-                        android:hint="@string/your_full_name"
+                        android:hint="@string/dummy_name"
                         android:textSize="14sp"
                         android:textColorHint="@color/md_grey_800"
                         android:textColor="@color/md_grey_800"/>
@@ -128,7 +157,7 @@
                         android:layout_height="40dp"
                         android:background="@drawable/edit_text_back"
                         android:inputType="text"
-                        android:focusable="true"
+                        android:focusable="false"
                         android:imeOptions="actionDone"
                         android:paddingLeft="8dp"
                         android:scrollHorizontally="true"
@@ -137,7 +166,7 @@
                         android:drawableStart="@drawable/ic_icon_phone_small"
                         android:drawablePadding="8dp"
                         android:layout_marginTop="16dp"
-                        android:hint="@string/your_phone_number"
+                        android:hint="@string/dummy_phone_number"
                         android:textSize="14sp"
                         android:textColorHint="@color/md_grey_800"
                         android:textColor="@color/md_grey_800"/>
@@ -160,7 +189,8 @@
                         <Spinner
                             android:id="@+id/District"
                             android:layout_width="match_parent"
-                            android:layout_height="40dp"/>
+                            android:layout_height="40dp"
+                            android:background="@drawable/edit_text_back"/>
 
                     </LinearLayout>
 
@@ -182,7 +212,8 @@
                         <Spinner
                             android:id="@+id/SubDistrict"
                             android:layout_width="match_parent"
-                            android:layout_height="40dp"/>
+                            android:layout_height="40dp"
+                            android:background="@drawable/edit_text_back"/>
 
                     </LinearLayout>
 
@@ -192,54 +223,11 @@
                         android:layout_height="40dp"
                         android:layout_marginTop="16dp"
                         android:textAllCaps="true"
-                        android:text="@string/next"
+                        android:text="@string/update"
                         android:background="@drawable/green_gradient_color_button"
                         android:textColor="@color/md_white_1000"
                         android:clickable="true"
                         android:foreground="?attr/selectableItemBackgroundBorderless"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:paddingTop="4dp"
-                        android:paddingBottom="4dp"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:orientation="horizontal"
-                        android:weightSum="2">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="wrap_content"
-                            android:text="@string/have_an_account"
-                            android:layout_marginRight="4dp"
-                            android:gravity="center|right"
-                            android:textColor="@color/md_black_1000"
-                            android:textSize="14sp"/>
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="wrap_content">
-
-                            <TextView
-                                android:id="@+id/textSignInHere"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center|left"
-                                android:layout_marginLeft="4dp"
-                                android:text="@string/sign_in_here"
-                                android:textColor="@color/toolbar_title_color"
-                                android:clickable="true"
-                                android:foreground="?attr/selectableItemBackgroundBorderless"
-                                android:textStyle="bold"
-                                android:textSize="14sp"/>
-
-                        </LinearLayout>
-
-                    </LinearLayout>
 
                 </LinearLayout>
 

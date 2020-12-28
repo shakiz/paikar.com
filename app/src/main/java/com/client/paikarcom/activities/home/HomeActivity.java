@@ -1,5 +1,14 @@
 package com.client.paikarcom.activities.home;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.LinearLayout;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,18 +20,19 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.Handler;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.WindowManager;
-import android.widget.ListView;
-
 import com.client.paikarcom.R;
-import com.client.paikarcom.activities.product.ProductDetailsActivity;
+import com.client.paikarcom.activities.companyinfo.AboutUsActivity;
+import com.client.paikarcom.activities.companyinfo.ComplaintAndSuggestionActivity;
+import com.client.paikarcom.activities.companyinfo.ContactUsActivity;
+import com.client.paikarcom.activities.companyinfo.CreditPolicyActivity;
+import com.client.paikarcom.activities.companyinfo.PaymentSystemActivity;
+import com.client.paikarcom.activities.companyinfo.ReturnPolicyActivity;
+import com.client.paikarcom.activities.companyinfo.VehicleServiceActivity;
+import com.client.paikarcom.activities.companyinfo.VisionActivity;
+import com.client.paikarcom.activities.notification.NotificationActivity;
 import com.client.paikarcom.activities.product.ShoppingCartActivity;
 import com.client.paikarcom.activities.product.SubCategoryActivity;
+import com.client.paikarcom.activities.profile.ProfileActivity;
 import com.client.paikarcom.adapters.CategoryRecyclerAdapter;
 import com.client.paikarcom.adapters.SlidingImageAdapter;
 import com.client.paikarcom.extras.Tools;
@@ -48,6 +58,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private Toolbar toolbar;
     private ActionBarDrawerToggle mDrawerToggle;
     private Tools tools;
+    private LinearLayout navHeaderLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,14 +92,14 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         tabLayout = (TabLayout) findViewById(R.id.tabDots);
         categoryRecycler = findViewById(R.id.categoryRecycler);
         nav_view = findViewById(R.id.nav_view);
+        navHeaderLayout = nav_view.getHeaderView(0).findViewById(R.id.navHeaderLayout);
         tools = new Tools(this);
     }
     //endregion
 
     //region drawer toggle
-    void setupDrawerToggle(){
-        mDrawerToggle = new ActionBarDrawerToggle(this,mDrawerLayout,toolbar,R.string.app_name, R.string.app_name);
-        //This is necessary to change the icon of the Drawer Toggle upon state change.
+    private void setupDrawerToggle(){
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,toolbar, R.string.app_name, R.string.app_name);
         mDrawerLayout.addDrawerListener(mDrawerToggle);
         mDrawerToggle.syncState();
     }
@@ -98,6 +109,15 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private void bindUiWithComponents() {
         //region set nav drawer item click listener
         nav_view.setNavigationItemSelectedListener(this);
+        //endregion
+
+        //region profile click
+        navHeaderLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, ProfileActivity.class));
+            }
+        });
         //endregion
 
         //region viewpager for image slider
@@ -178,8 +198,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-
-
     @Override
     public void onBackPressed() {
         tools.exitApp();
@@ -189,28 +207,36 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.notification:
+                startActivity(new Intent(HomeActivity.this, NotificationActivity.class));
                 break;
             case R.id.returnPolicy:
+                startActivity(new Intent(HomeActivity.this, ReturnPolicyActivity.class));
                 break;
             case R.id.paymentSystem:
+                startActivity(new Intent(HomeActivity.this, PaymentSystemActivity.class));
                 break;
             case R.id.vehicle:
+                startActivity(new Intent(HomeActivity.this, VehicleServiceActivity.class));
                 break;
             case R.id.creditPolicy:
+                startActivity(new Intent(HomeActivity.this, CreditPolicyActivity.class));
                 break;
             case R.id.aboutUs:
+                startActivity(new Intent(HomeActivity.this, AboutUsActivity.class));
                 break;
             case R.id.contactUs:
+                startActivity(new Intent(HomeActivity.this, ContactUsActivity.class));
                 break;
             case R.id.vision:
+                startActivity(new Intent(HomeActivity.this, VisionActivity.class));
                 break;
             case R.id.complainOrSuggestion:
+                startActivity(new Intent(HomeActivity.this, ComplaintAndSuggestionActivity.class));
                 break;
         }
         //close navigation drawer
         mDrawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
-
     //endregion
 }

@@ -57,14 +57,13 @@ public class SignUpActivity extends AppCompatActivity {
                 R.layout.custom_spinner,
                 new String[]{"Your District","Patuakhali","Amtoli","Other"}
         );
-        districtAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         ArrayAdapter<String> subDistrictAdapter = new ArrayAdapter<String>(
                 this,
                 R.layout.custom_spinner,
                 new String[]{"Your Sub-District","Kalapara","Baufol","Other"}
         );
-        districtAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        subDistrictAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        districtAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
+        subDistrictAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
         activitySignUpBinding.District.setAdapter(districtAdapter);
         activitySignUpBinding.SubDistrict.setAdapter(subDistrictAdapter);
     }

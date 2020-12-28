@@ -310,6 +310,7 @@
     <color name="card_color_details">#16443A</color>
 
     <color name="colorTransparent">#FFffffff</color>
+    <color name="colorTransparentLightGrey">#80ffffff</color>
     <color name="layoutPart1Color">#BC3EC5B5</color>
     <color name="button_back_color">#274058</color>
     <color name="detailsLayoutColor">#4E93C9</color>

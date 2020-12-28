@@ -1,0 +1,35 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="2dp"
+    android:orientation="horizontal"
+    android:weightSum="2">
+
+    <TextView
+        android:id="@+id/Counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|left"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:gravity="center|left"
+        android:layout_margin="2dp"
+        android:text="@string/one_dot"
+        android:textColor="@color/md_grey_800"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/ProcessText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|left"
+        android:layout_marginLeft="8dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:gravity="center|left"
+        android:text="@string/payment_system"
+        android:textColor="@color/md_grey_800"
+        android:textSize="14sp"/>
+
+</LinearLayout>

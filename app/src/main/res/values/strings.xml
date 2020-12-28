@@ -19,7 +19,7 @@
     <string name="payment_system">Payment System</string>
     <string name="vehicle">Vehicle</string>
     <string name="credit_policy">Credit Policy</string>
-    <string name="about_us">Acout Us</string>
+    <string name="about_us">About Us</string>
     <string name="contact_us">Contact Us</string>
     <string name="vision">Vision</string>
     <string name="complain_or_suggestion">Complain / Suggestion</string>
@@ -80,4 +80,22 @@
     <string name="please_enter_valid_otp">Please enter valid otp</string>
     <string name="message">Message</string>
     <string name="my_profile">My Profile</string>
+    <string name="edit">Edit</string>
+    <string name="dummy_name">Sakhawat Hossain</string>
+    <string name="dummy_phone_number">01688499299</string>
+    <string name="update">Update</string>
+    <string name="about_us_details">We can find Bangladesh online supermarkets, grocers, fruit shops, universities and health, minor counseling, baby counseling, clothing counseling and meat and fishing.</string>
+    <string name="about_us_tagline_heading">So create that jealous fascination of meaninglessness and money making in yourself:</string>
+    <string name="about_us_tagline_1">1. You dont have to be a sage to write an epic.</string>
+    <string name="about_us_tagline_2">2. Make that jealous fascination of meaninglessness and money making in yourself - I want a little curiosity.</string>
+    <string name="about_us_tagline_3">3. So you will decide which word will be useful.</string>
+    <string name="about_us_tagline_4">4. So be aware, what do you think - to him; Be aware.</string>
+    <string name="about_us_tagline_5">5. So you will decide which word will be useful.</string>
+    <string name="payment_system_heading">You can make payments through wholesale, rocket, cash and bank transfer at paikar.com.</string>
+    <string name="bkash">Bkash</string>
+    <string name="rocket">Rocket</string>
+    <string name="one">1</string>
+    <string name="one_dot">1.</string>
+    <string name="bkash_app_payment_instruction">Instructions for payment through bKash app.</string>
+    <string name="rocket_app_payment_instruction">Instructions for payment through Rocket app.</string>
 </resources>
