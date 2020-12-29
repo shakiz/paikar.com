@@ -99,4 +99,11 @@
     <string name="bkash_app_payment_instruction">Instructions for payment through bKash app.</string>
     <string name="rocket_app_payment_instruction">Instructions for payment through Rocket app.</string>
     <string name="complain_or_suggestion_details">So create in yourself that jealous fascination of meaninglessness and meaninglessness:</string>
+    <string name="return_policy_details">We are a Bangladeshi online supermarket that sells products in categories such as groceries, fruits and vegetables, beauty and health, family care, baby care, pet care and delivering meat and fish to your doorstep.</string>
+    <string name="return_policy_tagline">So create that jealous fascination of meaninglessness and money making in yourself:</string>
+    <string name="transport_facilities">Transportation facilities</string>
+    <string name="contact_address_details">Address: 18 / A, Mohammadia Housing (Behind Children\'s Park), Mohammadpur, Dhaka-1207</string>
+    <string name="phone_sample">Phone: + 801xxxxxxxxx, + 801xxxxxxxxx</string>
+    <string name="support_email_sample">Email: support@paikary.com</string>
+    <string name="hotline_sample">Hotline: +8096124575, 16547</string>
 </resources>
