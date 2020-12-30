@@ -1,0 +1,90 @@
+<RelativeLayout
+    android:id="@+id/item_card_view"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:foreground="?attr/selectableItemBackgroundBorderless"
+    android:layout_margin="4dp">
+
+    <View
+        android:id="@+id/viewLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/md_grey_200"/>
+
+    <LinearLayout
+        android:layout_below="@id/viewLine"
+        android:id="@+id/itemContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/OrderConfirmationText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/your_order_has_been_confirmed"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textSize="16sp"
+            android:textColor="@color/md_grey_800"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/order_invoice_number"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textSize="14sp"
+                android:textColor="@color/md_grey_800"/>
+
+            <TextView
+                android:id="@+id/InvoiceNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="@string/dummy_invoice_number"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textSize="14sp"
+                android:textColor="@color/md_grey_800"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/OrderConfirmationTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_gravity="center"
+            android:text="@string/dummy_time_am"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textSize="14sp"
+            android:textColor="@color/md_grey_600"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/SeenStatus"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:src="@drawable/ic_ellipse_green_gradient"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="8dp"/>
+
+</RelativeLayout>

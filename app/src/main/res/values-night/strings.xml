@@ -106,4 +106,8 @@
     <string name="phone_sample">Phone: + 801xxxxxxxxx, + 801xxxxxxxxx</string>
     <string name="support_email_sample">Email: support@paikary.com</string>
     <string name="hotline_sample">Hotline: +8096124575, 16547</string>
+    <string name="your_order_has_been_confirmed">Your order has been confirmed.</string>
+    <string name="order_invoice_number">Order Invoice Number :</string>
+    <string name="dummy_invoice_number"># 21556451</string>
+    <string name="dummy_time_am">08.15am</string>
 </resources>
