@@ -15,17 +15,30 @@ import com.client.paikarcom.databinding.ActivityOtpVerificationBinding;
 
 public class OtpVerificationActivity extends AppCompatActivity {
     private ActivityOtpVerificationBinding activityOtpVerificationBinding;
+    private String phoneNumber = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         activityOtpVerificationBinding = DataBindingUtil.setContentView(this, R.layout.activity_otp_verification);
 
+        //region get intent data
+        getIntentData();
+        //endregion
+
         //region init UI and perform UI interactions
         initUI();
         bindUiWithComponents();
         //endregion
     }
+
+    //region load intent data
+    private void getIntentData(){
+        if (getIntent().getStringExtra("mobile") != null){
+            phoneNumber = getIntent().getStringExtra("mobile");
+        }
+    }
+    //endregion
 
     //region init UI
     private void initUI() {
@@ -34,6 +47,8 @@ public class OtpVerificationActivity extends AppCompatActivity {
 
     //region perform UI interactions
     private void bindUiWithComponents() {
+        activityOtpVerificationBinding.MobileNo.setText(phoneNumber);
+
         activityOtpVerificationBinding.submitOtpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

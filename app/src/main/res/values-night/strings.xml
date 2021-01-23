@@ -110,4 +110,7 @@
     <string name="order_invoice_number">Order Invoice Number :</string>
     <string name="dummy_invoice_number"># 21556451</string>
     <string name="dummy_time_am">08.15am</string>
+    <string name="phone_number_operator_not_valid">Phone number operator not valid</string>
+    <string name="phone_number_length_should_be_eleven">Number length not valid</string>
+    <string name="phone_number_valid">Valid phone number</string>
 </resources>

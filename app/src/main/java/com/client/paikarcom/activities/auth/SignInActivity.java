@@ -4,15 +4,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import com.client.paikarcom.R;
 import com.client.paikarcom.databinding.ActivitySignInBinding;
+import com.client.paikarcom.extras.Tools;
 
 public class SignInActivity extends AppCompatActivity {
     private ActivitySignInBinding activitySignInBinding;
+    private Tools tools;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,7 @@ public class SignInActivity extends AppCompatActivity {
 
     //region init UI
     private void initUI() {
+        tools = new Tools(this);
     }
     //endregion
 
@@ -39,7 +43,12 @@ public class SignInActivity extends AppCompatActivity {
                     if (activitySignInBinding.errorMessageLayout.getVisibility() == View.VISIBLE){
                         activitySignInBinding.errorMessageLayout.setVisibility(View.GONE);
                     }
-                    startActivity(new Intent(SignInActivity.this, OtpVerificationActivity.class).putExtra("mobile",activitySignInBinding.MobileNo.getText().toString()));
+                    if (!TextUtils.isEmpty(tools.phoneNumberValidation(activitySignInBinding.MobileNo.getText().toString()))){
+                        Toast.makeText(SignInActivity.this, tools.phoneNumberValidation(activitySignInBinding.MobileNo.getText().toString()), Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        startActivity(new Intent(SignInActivity.this, OtpVerificationActivity.class).putExtra("mobile",activitySignInBinding.MobileNo.getText().toString()));
+                    }
                 } else {
                     if (activitySignInBinding.errorMessageLayout.getVisibility() == View.GONE){
                         activitySignInBinding.errorMessageLayout.setVisibility(View.VISIBLE);

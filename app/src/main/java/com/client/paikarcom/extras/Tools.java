@@ -66,4 +66,22 @@ public class Tools {
     }
     //endregion
 
+    //region phone number validation
+    public String phoneNumberValidation(String phoneNumber){
+        String message = "";
+        String operator = phoneNumber.substring(0,3);
+        if (!operator.equals("012") && !operator.equals("013") && !operator.equals("017") && !operator.equals("018")
+            && !operator.equals("019") && !operator.equals("015") && !operator.equals("016")){
+            message = context.getString(R.string.phone_number_operator_not_valid);
+        }
+        else if (phoneNumber.length() != 11){
+            message = context.getString(R.string.phone_number_length_should_be_eleven);
+        }
+        else{
+            message = "";
+        }
+        return message;
+    }
+    //endregion
+
 }
