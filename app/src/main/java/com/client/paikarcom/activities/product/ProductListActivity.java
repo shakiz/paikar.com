@@ -115,7 +115,15 @@ public class ProductListActivity extends AppCompatActivity {
     }
 
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        return super.onOptionsItemSelected(item);
+        switch (item.getItemId()) {
+            case R.id.bag:
+                startActivity(new Intent(ProductListActivity.this, ShoppingCartActivity.class).putExtra("from","productList").putExtra("category", category));
+                return true;
+            case R.id.call:
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override

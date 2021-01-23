@@ -111,7 +111,15 @@ public class SubCategoryActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        return super.onOptionsItemSelected(item);
+        switch (item.getItemId()) {
+            case R.id.bag:
+                startActivity(new Intent(SubCategoryActivity.this, ShoppingCartActivity.class).putExtra("from","subCategory").putExtra("category", category));
+                return true;
+            case R.id.call:
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override

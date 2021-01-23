@@ -147,6 +147,12 @@ public class ShoppingCartActivity extends AppCompatActivity {
         else if(from.equals("home")){
             startActivity(new Intent(ShoppingCartActivity.this, HomeActivity.class));
         }
+        else if (from.equals("productList")){
+            startActivity(new Intent(ShoppingCartActivity.this, ProductListActivity.class).putExtra("category", category));
+        }
+        else if (from.equals("subCategory")){
+            startActivity(new Intent(ShoppingCartActivity.this, SubCategoryActivity.class).putExtra("category", category));
+        }
     }
 
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
