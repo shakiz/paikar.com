@@ -14,10 +14,13 @@ import java.util.ArrayList;
 
 public class ShoppingCartRecyclerAdapter extends RecyclerView.Adapter<ShoppingCartRecyclerAdapter.ViewHolder> {
     private ArrayList<Product> productList;
-    private int quantity = 0;
+    public int[] singleTotal;
+    private int[] singleQuantity;
 
     public ShoppingCartRecyclerAdapter(ArrayList<Product> productList) {
         this.productList = productList;
+        singleTotal = new int[productList.size()];
+        singleQuantity = new int[productList.size()];
     }
 
     //region click listener
@@ -44,8 +47,8 @@ public class ShoppingCartRecyclerAdapter extends RecyclerView.Adapter<ShoppingCa
         holder.ProductTitle.setText(product.getProductTitle());
         holder.ProductPrice.setText(String.valueOf(product.getProductPrice()));
         holder.AmountInKg.setText(String.valueOf(product.getAmountInKg())+" Kg");
-        holder.quantityText.setText(String.valueOf(quantity));
-        holder.TotalAmount.setText(String.valueOf(quantity * product.getProductPrice()));
+        holder.quantityText.setText(String.valueOf(singleQuantity[position]));
+        holder.TotalAmount.setText(String.valueOf(singleQuantity[position] * product.getProductPrice()));
         //remove product from cart
         if (onRemoveClick != null){
             holder.DeleteFromCart.setOnClickListener(new View.OnClickListener() {
@@ -60,18 +63,20 @@ public class ShoppingCartRecyclerAdapter extends RecyclerView.Adapter<ShoppingCa
         holder.addQuantity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                quantity++;
-                holder.quantityText.setText(String.valueOf(quantity));
-                holder.TotalAmount.setText("$ "+String.valueOf(quantity * product.getProductPrice()));
+                singleQuantity[position]++;
+                holder.quantityText.setText(String.valueOf(singleQuantity[position]));
+                singleTotal[position]= (int) (singleQuantity[position] * product.getProductPrice());
+                holder.TotalAmount.setText("$ "+String.valueOf(singleTotal[position]));
             }
         });
         holder.removeQuantity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (quantity > 0){
-                    quantity--;
-                    holder.quantityText.setText(String.valueOf(quantity));
-                    holder.TotalAmount.setText("$ "+String.valueOf(quantity * product.getProductPrice()));
+                if (singleQuantity[position] > 0){
+                    singleQuantity[position]--;
+                    singleTotal[position] = (int) (singleQuantity[position] * product.getProductPrice());
+                    holder.quantityText.setText(String.valueOf(singleQuantity[position]));
+                    holder.TotalAmount.setText("$ "+String.valueOf(singleTotal[position]));
                 }
             }
         });
